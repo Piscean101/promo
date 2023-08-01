@@ -1,0 +1,359 @@
+/** FLEX LIST **/ 
+body, .slide, #shopper section, #offer-details, #shopper section div, #promo-image-tag, #social fieldset, #social span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+/** GLOBAL STYLES **/
+:root {
+    --main-clr: red;
+    --second-clr: darkred;
+    --third-clr: rgb(46, 150, 255);
+    --background-clr-dark: rgb(144, 50, 50);
+    --background-clr-light: rgba(241, 241, 241, 0.332);
+    --background-clr-alt: rgb(249, 180, 143);
+    --background-clr-green-grd: linear-gradient(to bottom, rgb(0, 56, 0), darkgreen, green, green, rgb(0, 187, 0), rgb(255, 255, 82));
+    --background-color-blue-grd: linear-gradient(to bottom, rgb(0, 5, 95), rgb(0, 0, 101), rgb(0, 0, 133), rgb(14, 44, 152), rgb(26, 63, 196));
+}
+body {
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+    box-sizing: border-box;
+}
+button:hover, a:hover {
+    cursor: pointer;
+}
+#slide-wrapper {
+    position: relative; 
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+    width: 85vw;
+    height: 100vh;
+}
+.slide {
+    position: absolute; 
+    inset: 0; 
+    flex-wrap: wrap; 
+    overflow-y: scroll;
+    padding-top: 15px;
+}
+.slide::-webkit-scrollbar {
+    background-color: white;
+    width: 8px;
+}
+.slide::-webkit-scrollbar-thumb {
+    background-color: var(--background-clr-light);
+    border-radius: 20px;
+}
+#shopper section {
+    position: relative; 
+    width: 95%;
+    height: 55%;
+    border-radius: 50px;
+    margin: 5px;
+    padding: none;
+    align-items: self-start;
+    overflow: hidden;
+}
+#shopper section div {
+    position: absolute;
+}
+
+/** SECTION STYLES **/ 
+/* WELCOME SECTION : POINTS BALANCE / FLYER LINK */ 
+#welcome div:nth-of-type(1) {
+    top: 0;
+    justify-content: space-evenly;
+    display: flex;
+    justify-content: space-evenly;
+}
+#welcome div:nth-of-type(2) {
+    bottom: 20%;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+#shopper #welcome {
+    height: 20%;
+    border: none;
+    background-color: var(--background-clr-light);
+}
+span {
+    margin: none;
+    color: red;
+}
+.logo {
+    padding-right: 20px;
+}
+/* SECOND SECTION : POINTS OFFER */
+#shopper #points div {
+    width: 100%;
+    text-align: center;
+}
+#shopper #points div:nth-of-type(1) {
+    background-color: var(--background-clr-dark);
+    top: 0%;
+    height: 20%;
+}
+#shopper #points div:nth-of-type(2) {
+    background-color: var(--main-clr);
+    height: 30%;
+    top: 15%;
+    z-index: -1;
+}
+#shopper #points div:nth-of-type(3) {
+    color: var(--main-clr);
+    bottom: 0;
+    height: 80%;
+}
+#shopper #points {
+    border: var(--main-clr) 2px solid;
+    border-top: none;
+}
+/**** shared button styling ****/
+#shopper #points button, #shop-now button {
+    position: absolute;
+    bottom: 10%;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    width: 60%;
+}
+/**** shared button styling ****/
+/* THIRD SECTION : PROMO GIVEAWAY */ 
+#shopper #promo {
+    background-color: var(--main-clr);
+}
+#shopper #promo div {
+    position: absolute;
+    color: white;
+}
+#shopper #promo #promo-title {
+    top: 0;
+    left: 10%;
+    width: 50%;
+    height: 50%;
+    z-index: 5;
+    text-align: center;
+}
+#shopper #promo #promo-image {
+    right: 0;
+    height: 100%;
+    width: 40%;
+}
+#promo-image-tag {
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    width: 40%;
+    height: 28%;
+    background-color: black;
+    border-radius: 50%;
+    font-size: 60%;
+    text-align: center;
+    padding: 2%;
+    border: 2px solid white;
+    outline: 5px solid black;
+}
+#promo-image-tag i {
+    position: relative;
+    font-size: 200%;
+}
+#shopper #promo #promo-details {
+    bottom: 10%;
+    left: 10%;
+    height: 50%;
+    width: 50%;
+    text-align: center;
+    z-index: 5;
+}
+#promo-details a {
+    position: absolute;
+    bottom: 0;
+}
+/* FOURTH SECTION : BRAND LISTING */ 
+#shopper #shop-now div {
+    width: 50%;
+    height: 100%;
+    font-weight: bold;
+}
+#shop-now p:nth-of-type(1) {
+    font-size: 150%;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    left: -10%;
+    position: absolute;
+    opacity: 0.15;
+}
+#shop-now p:nth-of-type(2) {
+    text-align: center;
+    z-index: 2;
+    width: 85%;
+}
+#shopper #shop-now div:nth-of-type(1) {
+    left: 0;
+    background-color: var(--background-clr-alt);
+}
+#shopper #shop-now div:nth-of-type(2) {
+    right: 0;
+    background-color: black;
+}
+/* FIFTH SECTION : MAIN BODY (4 PARTS & FOOTER) */
+#shopper #main {
+    height: 450vh;
+    display: flex;
+    align-items:start;
+}
+#shopper #main #main-section:nth-of-type(odd) {
+    background-image: var(--background-clr-green-grd);    width: 100%;
+    height: 30%;
+    position: relative;
+}
+#shopper #main #main-section:nth-of-type(even) {
+    background-color: rgb(0, 95, 0);
+    width: 100%;
+    height: 30%;
+    position: relative;
+}
+#shopper #main #main-section:nth-of-type(3) {
+    height: 10%;
+}
+/** MAIN BODY (1) **/
+#shopper #main #main-section .main-offer {
+    position: absolute;
+    background-color: white;
+    right: 0;
+    top: 50%;
+    width: 100%;
+    height: 20%;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: -50px;
+}
+#main .main-model h1 {
+    position: absolute;
+    top: 3%;
+    left: 8%;
+    font-size: 300%;
+    width: 50%;
+    color: white;
+}
+#main .main-model button {
+    position: absolute;
+    top: 30%;
+    left: 8%;
+    padding: 10px;
+    width: 35%;
+    border-radius: 5px;
+    border: none;
+    color: green;
+    font-weight: bold;
+}
+.main-model #promo-image-tag {
+    top: 35%;
+    height: 8%;
+    width: 15%;
+    background-color: var(--background-clr-light);
+    color: green;
+    transform: rotate(10deg);
+    z-index: 5;
+    outline: none;
+    border: none;
+}
+.main-model #promo-image-tag.sustain {
+    position: absolute;
+    top: 65%;
+    right: 89%;
+    background: none;
+    transform: none;
+    height: 50%;
+}
+.main-model #promo-image-tag.sustain p {
+    font-size: 10px;
+    writing-mode: vertical-rl;
+}
+.main-model #promo-image-tag p {
+    font-weight: bold;
+    font-size: 220%;
+}
+#shopper #main .main-offer div:nth-of-type(1) {
+    position: absolute;
+    left: 0;
+    width: 25%;
+}
+.main-offer #offer-details {
+    position: absolute;
+    width: 60%;
+    right: 0;
+    text-align: left;
+    color: var(--main-clr);
+}
+#offer-details b:nth-of-type(1) {
+    font-size: 110%;
+}
+#offer-details b:nth-of-type(2) {
+    font-size: 150%;
+}
+/** MAIN BODY (2) & (4) **/
+.product-placement aside {
+    padding-right: 15%;
+}
+.product-placement fieldset {
+    border: none;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+}
+.product-placement fieldset legend {
+    font-size: 140%;
+}
+.product-placement {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+}
+.product-placement:nth-of-type(1) {
+    top: 0;
+}
+.product-placement:nth-of-type(3) {
+    bottom: 0;
+}
+/** MAIN BODY (3) **/
+.main-model-3 #promo-image-tag {
+    height: 33%;
+    width: 23%;
+    right: -4%;
+    bottom: -10%;
+    z-index: 5;
+    background-image: var(--background-color-blue-grd);
+    border: none;
+    outline: none;
+}
+/** MAIN BODY (FLYER + FOOTER) **/
+#check-flyer {
+    background-color: var(--third-clr);
+    width: 100%;
+    height: 25%;
+    z-index: 3;
+}
+#check-flyer h2 {
+    width: 80%;
+    margin: 10px;
+    font-size: 200%;
+    color: white;
+    height: 90%;
+    right: 5%;
+    position: relative;
+}
+#shopper #social {
+    background-color: var(--background-clr-light);
+    height: 50%;
+    border-radius: 0;
+}
+#shopper #social fieldset {
+    border: none;
+}
+#social span {
+    width: 85%;
+}
