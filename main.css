@@ -1,5 +1,5 @@
 /** FLEX LIST **/ 
-body, .slide, #shopper section, #offer-details, #shopper section div, #promo-image-tag, #social fieldset, #social span {
+body, .slide, #shopper section, #offer-details, #shopper section div, #promo-details-wrap, #promo-image-tag, #social fieldset, #social span {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,12 +11,13 @@ body, .slide, #shopper section, #offer-details, #shopper section div, #promo-ima
     --main-clr: red;
     --second-clr: darkred;
     --third-clr: rgb(46, 150, 255);
-    --main-clr-light: rgba(255, 114, 114, 0.486);
+    --main-clr-light: rgba(255, 19, 19, 0.803);
     --background-clr-dark: rgb(144, 50, 50);
-    --background-clr-light: rgba(241, 241, 241, 0.332);
+    --background-clr-light: rgba(241, 241, 241, 0.75);
     --background-clr-alt: rgb(249, 180, 143);
+    --background-clr-green: rgb(0, 95, 0);
     --background-clr-green-grd: linear-gradient(to bottom, rgb(0, 56, 0), darkgreen, green, green, rgb(0, 187, 0), rgb(255, 255, 82));
-    --background-color-blue-grd: linear-gradient(to bottom, rgb(0, 5, 95), rgb(0, 0, 101), rgb(0, 0, 133), rgb(14, 44, 152), rgb(26, 63, 196));
+    --background-color-blue-grd: linear-gradient(to bottom, rgb(0, 5, 95), rgb(16, 16, 159), rgb(25, 25, 220), rgb(44, 82, 222), rgb(96, 130, 255));
 }
 a {
     text-underline-offset: 5px;
@@ -31,8 +32,9 @@ button:hover, a:hover {
 }
 #slide-wrapper {
     position: relative; 
-    width: 85vw;
+    width: 100vw;
     height: 100vh;
+    min-width: 420px;
     max-width: 700px;
 }
 .slide {
@@ -53,8 +55,8 @@ button:hover, a:hover {
 #shopper section {
     position: relative; 
     width: 95%;
-    height: 55%;
-    border-radius: 50px;
+    height: 40%;
+    border-radius: 30px;
     margin: 5px;
     padding: none;
     align-items: self-start;
@@ -82,19 +84,23 @@ button:hover, a:hover {
     height: 20%;
     border: none;
     background-color: var(--background-clr-light);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 span {
     margin: none;
-    color: red;
+    color: rgba(255, 0, 0, 0.8);
 }
 .logo {
     padding-right: 20px;
 }
 /* SECOND SECTION : POINTS OFFER */
 #points img {
-    height: 20%;
-    width: 20%;
+    position: absolute;
+    height: 50px;
+    width: 50px;
     padding: 10px;
+    top: -20px;
 }
 #points:hover {
     cursor: pointer;
@@ -107,52 +113,87 @@ span {
 #shopper #points div:nth-of-type(1) {
     background-color: var(--background-clr-dark);
     top: 0%;
-    height: 20%;
+    height: 10%;
     font-size: 140%;
     font-weight: bold;
 }
 #shopper #points div:nth-of-type(2) {
     background-color: var(--main-clr);
-    height: 30%;
-    top: 20%;
+    height: 20%;
+    top: 10%;
     z-index: -1;
     font-size: 75%;
     font-family:'Courier New', Courier, monospace;
 }
 #shopper #points div:nth-of-type(3) {
-    color: var(--main-clr);
+    color: black;
     bottom: 0;
-    height: 80%;
+    height: 50%;
+    width: 50%;
+    bottom: 10%;
 }
 #shopper #points {
     /** border: var(--main-clr-light) 1px solid; **/
     border-top: none;
 }
-/**** shared button styling ****/
-#shopper #points button, #shop-now button {
+#shopper #points button {
+    font-weight: bold;
     position: absolute;
-    bottom: 10%;
+    bottom: 0;
     background-color: black;
     color: white;
     padding: 10px;
-    width: 60%;
+    width: 55%;
+    outline: 2px solid black;
+    transition: all 250ms ease;
+    bottom: -20px;
 }
-/**** shared button styling ****/
+#shopper #points button:hover {
+    outline-offset: 2px;
+}
 /* THIRD SECTION : PROMO GIVEAWAY */ 
 #shopper #promo {
-    background-color: var(--main-clr);
+    background-color: var(--main-clr-light);
 }
 #shopper #promo div {
     position: absolute;
     color: white;
 }
+#shopper #promo #promo-details-wrap {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    margin-right: 45%;
+}
 #shopper #promo #promo-title {
-    top: 0;
-    left: 10%;
+    top: 10px;
     width: 50%;
     height: 50%;
     z-index: 5;
     text-align: center;
+    font-size: 275%;
+}
+#shopper #promo #promo-title i {
+    font-size: 15px;
+    left: 0;
+    right: 0;
+}
+#shopper #promo #promo-details {
+    height: 50%;
+    width: 50%;
+    text-align: center;
+    z-index: 5;
+    position: absolute;
+    top: 50%;
+}
+#promo-details a {
+    color: white;
+    font-size: 120%;
+    text-decoration: none;
+    left: 50%;
+    position: absolute;
+    bottom: 30%;
+    left: 40%;
 }
 #shopper #promo #promo-image {
     right: 0;
@@ -163,8 +204,8 @@ span {
     position: absolute;
     right: 10%;
     bottom: 10%;
-    width: 40%;
-    height: 28%;
+    width: 80px;
+    height: 80px;
     background-color: black;
     border-radius: 50%;
     font-size: 60%;
@@ -177,25 +218,22 @@ span {
     position: relative;
     font-size: 200%;
 }
-#shopper #promo #promo-details {
-    bottom: 10%;
-    left: 10%;
-    height: 50%;
-    width: 50%;
-    text-align: center;
-    z-index: 5;
-}
-#promo-details a {
-    position: absolute;
-    bottom: 0;
-    color: white;
-    font-size: 120%;
-}
 /* FOURTH SECTION : BRAND LISTING */ 
 #shopper #shop-now div {
     width: 50%;
     height: 100%;
     font-weight: bold;
+}
+#shop-now button {
+    position: absolute;
+    padding: 10px;
+    width: 35%;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    background-color: black;
+    top: 70%;
 }
 #shop-now p:nth-of-type(1) {
     font-size: 150%;
@@ -224,13 +262,21 @@ span {
     display: flex;
     align-items:start;
 }
+#shopper #main .top-layer {
+    position: absolute;
+    width: 100%;
+    height: 2%;
+    background-color: var(--background-clr-green);
+    border-top-right-radius: 50px;
+    top: -2%;
+}
 #shopper #main #main-section:nth-of-type(odd) {
     background-image: var(--background-clr-green-grd);    width: 100%;
     height: 30%;
     position: relative;
 }
 #shopper #main #main-section:nth-of-type(even) {
-    background-color: rgb(0, 95, 0);
+    background-color: var(--background-clr-green);
     width: 100%;
     height: 30%;
     position: relative;
@@ -282,7 +328,7 @@ span {
 }
 .main-model #promo-image-tag.sustain {
     position: absolute;
-    top: 65%;
+    top: 60%;
     right: 89%;
     background: none;
     transform: none;
@@ -357,12 +403,11 @@ span {
     z-index: 3;
 }
 #check-flyer h2 {
-    width: 80%;
+    width: 100%;
     margin: 10px;
     font-size: 200%;
     color: white;
     height: 90%;
-    right: 5%;
     position: relative;
 }
 #shopper #social {
@@ -372,6 +417,7 @@ span {
 }
 #shopper #social fieldset {
     border: none;
+    font-size: 75%;
 }
 #social span {
     width: 85%;
