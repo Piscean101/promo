@@ -243,11 +243,17 @@ span {
 }
 
 /*** FOURTH SECTION : BRAND LISTING ***/ 
-
+#shopper #shop-now {
+    background-color: black;
+}
 #shopper #shop-now div {
-    width: 50%;
     height: 100%;
     font-weight: bold;
+}
+#shop-now .overlay {
+    background-color: var(--background-clr-alt);
+    z-index: 10;
+    width: 100%;
 }
 #shop-now button {
     position: absolute;
@@ -260,7 +266,7 @@ span {
     background-color: black;
     top: 70%;
 }
-#shop-now p:nth-of-type(1) {
+#shop-now p.side {
     font-size: 150%;
     writing-mode: vertical-lr;
     transform: rotate(180deg);
@@ -268,7 +274,7 @@ span {
     position: absolute;
     opacity: 0.15;
 }
-#shop-now p:nth-of-type(2) {
+#shop-now p.desc {
     text-align: center;
     z-index: 2;
     width: 85%;
@@ -276,10 +282,19 @@ span {
 #shopper #shop-now div:nth-of-type(1) {
     left: 0;
     background-color: var(--background-clr-alt);
+    z-index: 5;
+    width: 50%;
 }
 #shopper #shop-now div:nth-of-type(2) {
     right: 0;
-    background-color: black;
+    background-color: var(--background-clr-alt);
+    transform: skewX(50deg) translateX(30px) translateY(0px);
+    width: 500%;
+}
+#shopper #shop-now div .content-wrapper {
+    position: absolute;
+    width: 100%;
+    left: 50%;
 }
 
 /*** FIFTH SECTION : MAIN BODY (4 PARTS & FOOTER) ***/
@@ -324,6 +339,14 @@ span {
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: -50px;
 }
+#main .main-model .overlay {
+    position: absolute;
+    width: 50%;
+    top: 0;
+    left: 0;
+    height: 60%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
 #main .main-model h1 {
     position: absolute;
     top: 3%;
@@ -331,13 +354,14 @@ span {
     font-size: 300%;
     width: 50%;
     color: white;
+    z-index: 5;
 }
 #main .main-model img {
     position: absolute;
     right: 0;
     top: 0;
     height: 50%;
-    width: 60%;
+    width: 50%;
 }
 #main .main-model button {
     position: absolute;
@@ -349,6 +373,7 @@ span {
     border: none;
     color: green;
     font-weight: bold;
+    z-index: 5;
 }
 .main-model #promo-image-tag {
     top: 35%;
@@ -386,7 +411,7 @@ span {
 }
 #shopper #main .main-offer div:nth-of-type(1) {
     left: 0;
-    width: 25%;
+    width: 30%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -394,11 +419,11 @@ span {
     top: 25%;
 }
 .main-offer div img {
-    height: 50%;
-    width: 50%;
+    height: 10%;
+    width: 10%;
     z-index: 10;
     top: 50%;
-    position: relative;
+    position: absolute;
 }
 .main-offer #offer-details {
     width: 60%;
